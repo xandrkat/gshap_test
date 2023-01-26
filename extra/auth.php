@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $request = Illuminate\Http\Request::capture();
@@ -14,7 +14,7 @@ $kernel->handle($request);
  * Redirect to provided url
  * @param $url
  */
-function redirectTo($url)
+#[NoReturn] function redirectTo($url)
 {
     if (! headers_sent()) {
         header('Location: '.$url, true, 302);
